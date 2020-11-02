@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Utility } from './../utility'
 import { IMAGE_URL } from './../constant';
 
+
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
