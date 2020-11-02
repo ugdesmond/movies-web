@@ -1,0 +1,61 @@
+
+
+    
+    
+    <div class="row hompage-container">
+    
+        <div class="form-group" style="width: 45%; margin: 10px;" *ngFor="let movie of movies ">
+            <div class="card" style="flex: 1; flex-direction: row;">
+              <div  style="flex-grow: 1; flex-direction: column;"> 
+                 <img class="card-img-top" src="{{imageUrl}}{{movie.poster_path}}" alt="Card image cap" style=" width: 200px; object-fit:cover">
+              </div>
+              <div class="card-body col-md-9" style="flex-direction: column;">
+                <div style="flex-direction: row; flex: 1; display: flex; margin-bottom: 30px;">
+                  <div class="col-md-3">
+                    <circle-progress
+                        [percent]= "getMovieVote(movie.vote_average)"
+                        [radius]="25"
+                        [outerStrokeWidth]="4"
+                        [innerStrokeWidth]="2"
+                        [outerStrokeColor]="'#f5d142'"
+                        [innerStrokeColor]="'#f5f1ae'"
+                        [animation]="true"
+                        [animationDuration]="300"
+                        [showSubtitle]="false"
+                        [backgroundColor]="'#232b2b'"
+                        [titleColor] ="'#FFFFFF '"
+                        [unitsColor]="'#FFFFFF '"
+                      >
+                    </circle-progress>
+             </div>
+                  <div  class="col-md-9"> 
+                    <h5 class="card-text" style="font-size: 5; font-weight: bold;">{{getMovieName(movie.original_title)}}</h5>
+                    <p class="card-text" style="font-size: 11;">{{getDate(movie.release_date)}}</p>
+                  </div>
+                </div>
+                <div style="margin-top: 30px; margin-bottom: 50px;">
+                  <p class="card-text" style="font-size: small;">{{getMovieBody(movie.overview)}} </p>
+                </div>
+                <hr/>
+                <div >
+                  <a [routerLink]="['/movie-detail',movie.id]" >more info</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+          <!-- <div style="margin-left: 30%;margin-right: 30%;margin-top:30px;">
+         <pagination-controls (pageChange)="getMovies($event)" class="my-pagination"></pagination-controls>
+    
+          </div> -->
+         
+    
+    
+    
+    
+      <!-- <mat-grid-list cols="2" rowHeight="7:1">
+        <mat-grid-tile *ngFor="movie  of movies">
+          <u>Hello</u>
+        </mat-grid-tile>
+      
+      </mat-grid-list> -->

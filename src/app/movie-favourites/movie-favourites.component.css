@@ -1,0 +1,31 @@
+.hompage-container {
+
+    margin: 10%;
+   
+    }
+
+    .container {
+        position: relative;
+        text-align: center;
+      }
+  
+
+      .bg {
+        /* The image used */
+        /* Full height */
+        height: 100%;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+      }
+      .red{
+        color: red;
+      }
+
+      .circle-icon {
+        background: #ffffff;
+        padding:10px;
+        border-radius: 50%;
+    }
